@@ -29,6 +29,8 @@ public class SnakeAndLadder {
 			
 			if(optionCheck==LADDER) {
 				position+= numberOnDie;
+				if(position>100)
+					position-= numberOnDie;
 			}
 			else if(optionCheck==SNAKE) {
 				position-= numberOnDie;
