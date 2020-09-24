@@ -11,6 +11,7 @@ public class SnakeAndLadder {
 		
 		//Variables
 		int position = 0;
+		int dieCounter = 0;
 		
 		//Welcome message
 		System.out.println("Welcome to Snake and Ladder!!");
@@ -21,11 +22,9 @@ public class SnakeAndLadder {
 		//Checking of options No Play, Ladder or Snake
 		while(position<100)
 		{
+			dieCounter++;
 			int numberOnDie = (int)(Math.floor(Math.random()*10) % 6 + 1);
-			System.out.println("Die "+numberOnDie);
-			
 			int optionCheck = (int)(Math.floor(Math.random()*10) % 3);
-			System.out.println("Option "+optionCheck); 
 			
 			if(optionCheck==LADDER) {
 				position+= numberOnDie;
@@ -43,6 +42,7 @@ public class SnakeAndLadder {
 			
 			System.out.println("Position "+position);
 		}
+		System.out.println("Number of times the dice was played "+dieCounter);
 	
 	}
 	
