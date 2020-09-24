@@ -18,25 +18,29 @@ public class SnakeAndLadder {
 		//Starting position
 		System.out.println("Starting Position: "+position); 
 		
-		int numberOnDie = (int)(Math.floor(Math.random()*10) % 6 + 1);
-		System.out.println(numberOnDie);
-		
-		int optionCheck = (int)(Math.floor(Math.random()*10) % 3);
-		System.out.println("Option "+optionCheck); 
-		
 		//Checking of options No Play, Ladder or Snake
-		if(optionCheck==LADDER) {
-			position+= numberOnDie;
-			if(position>100)
+		while(position<100)
+		{
+			int numberOnDie = (int)(Math.floor(Math.random()*10) % 6 + 1);
+			System.out.println("Die "+numberOnDie);
+			
+			int optionCheck = (int)(Math.floor(Math.random()*10) % 3);
+			System.out.println("Option "+optionCheck); 
+			
+			if(optionCheck==LADDER) {
+				position+= numberOnDie;
+			}
+			else if(optionCheck==SNAKE) {
 				position-= numberOnDie;
+				if(position<=0)
+					position=0;
+			}
+			else {
+				position = position;
+			}
+			
+			System.out.println("Position "+position);
 		}
-		else if(optionCheck==SNAKE) {
-			position-= numberOnDie;
-		}
-		else {
-			position = position;
-		}
-		System.out.println(position);
 	
 	}
 	
