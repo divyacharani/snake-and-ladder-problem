@@ -13,6 +13,9 @@ public class SnakeAndLadder {
 		
 		//Starting position
 		System.out.println("Starting Position: "+position); 
+		
+		int numberOnDie = (int)(Math.floor(Math.random()*10) % 6 + 1);
+		System.out.println(numberOnDie);
 	
 	}
 	
